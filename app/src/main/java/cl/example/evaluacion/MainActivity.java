@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,Sensores.class);
         eTNombre=findViewById(R.id.eTnombre);
         eTestado=findViewById(R.id.eTestado);
-        eTpedido=findViewById(R.id.eTpedido);
+
         bTAgregar=findViewById(R.id.button);
         lvpedidos=findViewById(R.id.lvPedidos);
         inicializarFireBase();

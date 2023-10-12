@@ -45,10 +45,10 @@ public class Pedidos {
 
     @Override
     public String toString() {
-        return "Autor{" +
-                "idAutor='" + idPedido + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", estado='" + estado + '\'' +
-                '}';
+        return
+                   '\'' +
+                "Producto: "+nombre + '\'' +
+              "Estado: "+ estado + '\''
+              ;
     }
 }
