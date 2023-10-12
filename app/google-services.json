@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "901111365334",
+    "project_id": "prueba-real-13dde",
+    "storage_bucket": "prueba-real-13dde.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901111365334:android:611e5b8d4099b1c3f39377",
+        "android_client_info": {
+          "package_name": "cl.example.evaluacion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLIcT280KnrikqQeh25R2eJeCCxHIcQ_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
