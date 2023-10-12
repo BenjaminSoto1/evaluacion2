@@ -16,7 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
+import android.content.Intent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<Pedidos> arrayAdapterPedidos;
 
     EditText eTNombre,eTpedido,eTestado;
-    Button bTAgregar;
+    Button bTAgregar,bTsensor;
     ListView lvpedidos;
 
     FirebaseDatabase firebaseDatabase;
@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        bTsensor=findViewById(R.id.btSensor);
+        Intent intent = new Intent(this,Sensores.class);
         eTNombre=findViewById(R.id.eTnombre);
         eTestado=findViewById(R.id.eTestado);
         eTpedido=findViewById(R.id.eTpedido);
@@ -49,19 +50,25 @@ public class MainActivity extends AppCompatActivity {
         listarDatos();
 
 
-        bTAgregar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Pedidos pedidos = new Pedidos();
-                //libro.setIdAutor("11111");
-                pedidos.setIdPedido(UUID.randomUUID().toString());
-                pedidos.setNombre(eTNombre.getText().toString());
-                pedidos.setEstado(eTestado.getText().toString());
-                databaseReference.child("Pedidos").child(pedidos.getIdPedido()).setValue(pedidos);
+        bTsensor.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            startActivity(intent);
+                                        }
+                                    });
+                bTAgregar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Pedidos pedidos = new Pedidos();
+                        //libro.setIdAutor("11111");
+                        pedidos.setIdPedido(UUID.randomUUID().toString());
+                        pedidos.setNombre(eTNombre.getText().toString());
+                        pedidos.setEstado(eTestado.getText().toString());
+                        databaseReference.child("Pedidos").child(pedidos.getIdPedido()).setValue(pedidos);
 
 
-            }
-        });
+                    }
+                });
 
 
     }
