@@ -7,6 +7,18 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/material_dynamic_neutral70"
+        android:text="Ver ubicacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.298" />
+
+    <Button
         android:id="@+id/btSensor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,19 +96,9 @@
         android:id="@+id/lvPedidos"
         android:layout_width="409dp"
         android:layout_height="469dp"
-        android:layout_marginTop="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="65dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="409dp"
-        android:layout_height="63dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="198dp"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/btSensor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

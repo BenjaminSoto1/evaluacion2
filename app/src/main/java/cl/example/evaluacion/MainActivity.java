@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import cl.example.evaluacion.Clases.Mymaps;
 import cl.example.evaluacion.Clases.Pedidos;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<Pedidos> arrayAdapterPedidos;
 
     EditText eTNombre,eTpedido,eTestado;
-    Button bTAgregar,bTsensor;
+    Button bTAgregar,bTsensor,bTmap;
     ListView lvpedidos;
 
     FirebaseDatabase firebaseDatabase;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bTsensor=findViewById(R.id.btSensor);
         Intent intent = new Intent(this,Sensores.class);
+        bTmap=findViewById(R.id.btMap);
+        Intent intent2 = new Intent(this, Mymaps.class);
         eTNombre=findViewById(R.id.eTnombre);
         eTestado=findViewById(R.id.eTestado);
 
@@ -56,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                     });
+        bTmap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent2);
+            }
+        });
                 bTAgregar.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
