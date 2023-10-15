@@ -23,7 +23,7 @@ public class Sensores extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sensores);
         btsensor=(findViewById(R.id.btSensor2));
-        Intent intent2 = new Intent(this,MainActivity.class);
+        Intent intent2 = new Intent(this, Inicio.class);
         mgr =(SensorManager) getSystemService(Context.SENSOR_SERVICE);
         textlista =(TextView) findViewById(R.id.sensorLista);
         List<Sensor> sensorLista= mgr.getSensorList(Sensor.TYPE_ALL);
