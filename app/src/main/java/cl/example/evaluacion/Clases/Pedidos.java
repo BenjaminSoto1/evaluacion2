@@ -48,7 +48,7 @@ public class Pedidos {
         return
                    '\'' +
                 "Producto: "+nombre + '\'' +
-              "Estado: "+ estado + '\''
+              " Estado: "+ estado + '\''
               ;
     }
 }
