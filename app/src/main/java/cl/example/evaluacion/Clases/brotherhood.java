@@ -26,7 +26,7 @@ import java.util.List;
 import cl.example.evaluacion.Inicio;
 import cl.example.evaluacion.R;
 
-public class Mymaps extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+public class brotherhood extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     public static class CustomInfo {
         private int imageResId;
@@ -45,8 +45,6 @@ public class Mymaps extends AppCompatActivity implements OnMapReadyCallback, Goo
             return infoText;
         }
     }
-    EditText txtLatitud, txtLongitud;
-    Button btMenu;
     GoogleMap mMap;
 
     // Lista para almacenar los marcadores
@@ -57,20 +55,9 @@ public class Mymaps extends AppCompatActivity implements OnMapReadyCallback, Goo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mymaps);
 
-        btMenu = findViewById(R.id.btMenu);
-        txtLatitud = findViewById(R.id.txtLatitud);
-        txtLongitud = findViewById(R.id.txtLongitud);
-        Intent intent = new Intent(this, Inicio.class);
-
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapa);
         mapFragment.getMapAsync(this);
 
-        btMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(intent);
-            }
-        });
     }
 
     @Override

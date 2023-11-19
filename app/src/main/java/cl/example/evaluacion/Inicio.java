@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import cl.example.evaluacion.Clases.Mymaps;
+import cl.example.evaluacion.Clases.brotherhood;
 
 public class Inicio extends AppCompatActivity {
 
@@ -24,7 +25,7 @@ public class Inicio extends AppCompatActivity {
         idsensores=findViewById(R.id.idSensores);
         Intent intent = new Intent(this,MainActivity.class);
         Intent intent2 = new Intent(this, Mymaps.class);
-        Intent intent3 = new Intent(this,Sensores.class);
+        Intent intent3 = new Intent(this, brotherhood.class);
 
         idinventario.setOnClickListener(new View.OnClickListener() {
             @Override
