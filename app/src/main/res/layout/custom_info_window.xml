@@ -1,32 +1,67 @@
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <!-- Puedes agregar cualquier vista que desees aquí, como imágenes, texto, etc. -->
 
     <ImageView
         android:id="@+id/infoImage"
-        android:layout_width="151dp"
-        android:layout_height="103dp"
+        android:layout_width="match_parent"
+        android:layout_height="134dp"
         android:scaleType="centerCrop"
 
-        app:srcCompat="@drawable/a9409281fa230ecd40b7f6e5f0594159" />
+        app:srcCompat="@drawable/brotherhood" />
 
     <TextView
-        android:id="@+id/infoTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="31dp"
+        android:id="@+id/infoTextView2"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
         android:text="Barberia Brotherhood" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="140dp"
-        android:layout_height="119dp"
-        android:contentDescription="Horario:  domingo	Cerrado lunes	10 a. m.–7 p. m. martes	10 a. m.–7 p. m. miércoles	10 a. m.–7 p. m. jueves	10 a. m.–7 p. m. viernes	10 a. m.–7 p. m. sábado	10 a. m.–5 p. m"
-        android:text="Horario:  domingo Cerrado                                           lunes	10 a. m.–7 p. m.                martes	10 a. m.–7 p. m. miércoles	10 a. m.–7 p.m. jueves	10 a. m.–7 p. m. viernes	10 a. m.–7 p. m. sábado	10 a. m.–5 p. m" />
+        android:id="@+id/infoTextView3"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:text="Horario: Domingo Cerrado" />
 
-    <!-- Agrega más vistas según sea necesario -->
+    <TextView
+        android:id="@+id/infoTextView4"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:text="Lunes 10 am - 7 pm" />
+
+    <TextView
+        android:id="@+id/infoTextView"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:text="Martes 10 am - 7 pm" />
+
+    <TextView
+        android:id="@+id/infoTextView5"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:text="Miercoles 10 am - 7 pm" />
+
+    <TextView
+        android:id="@+id/infoTextView6"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:text="Jueves 10 am - 7 pm" />
+
+    <TextView
+        android:id="@+id/infoTextView7"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:text="Viernes 10 am - 7 pm" />
+
+    <TextView
+        android:id="@+id/infoTextView8"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:text="Sabado 10 am - 9 pm" />
+
+
 
 </LinearLayout>
