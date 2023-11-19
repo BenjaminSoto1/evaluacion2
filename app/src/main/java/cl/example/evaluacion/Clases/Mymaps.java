@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -27,6 +28,23 @@ import cl.example.evaluacion.R;
 
 public class Mymaps extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener, GoogleMap.OnMarkerClickListener {
 
+    public static class CustomInfo {
+        private int imageResId;
+        private String infoText;
+
+        public CustomInfo(int imageResId, String infoText) {
+            this.imageResId = imageResId;
+            this.infoText = infoText;
+        }
+
+        public int getImageResId() {
+            return imageResId;
+        }
+
+        public String getInfoText() {
+            return infoText;
+        }
+    }
     EditText txtLatitud, txtLongitud;
     Button btMenu;
     GoogleMap mMap;
@@ -58,33 +76,6 @@ public class Mymaps extends AppCompatActivity implements OnMapReadyCallback, Goo
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
-        this.mMap.setOnMapClickListener(this);
-        this.mMap.setOnMapLongClickListener(this);
-
-        // Marcador para la tienda
-        LatLng tienda = new LatLng(-36.5900806, -72.0821342);
-        Marker tiendaMarker = mMap.addMarker(new MarkerOptions().position(tienda).title("Tienda"));
-        tiendaMarker.setTag("Información de la tienda");
-
-        // Otros marcadores
-        LatLng marker1 = new LatLng(-36.6064595, -72.1054738);
-        Marker marker1Marker = mMap.addMarker(new MarkerOptions().position(marker1).title("broderjud").snippet("BARBERIA ASDFJKMASFMSAKFMSKAMFKDSM"));
-        marker1Marker.setTag("Información de broderjud");
-
-        LatLng marker2 = new LatLng(-36.6057102, -72.0944875);
-        Marker marker2Marker = mMap.addMarker(new MarkerOptions().position(marker2).title("barber desenden").snippet("CORTES DEGRADESSSSSSS"));
-        marker2Marker.setTag("Información de barber desenden");
-
-        // Agrega los marcadores a la lista
-        marcadores.add(tiendaMarker);
-        marcadores.add(marker1Marker);
-        marcadores.add(marker2Marker);
-
-        // Mueve la cámara al primer marcador
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(tienda));
-
-        // Configura el listener para los clics en marcadores
-        mMap.setOnMarkerClickListener(this);
 
         // Configura el adaptador para el InfoWindow
         mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
@@ -95,21 +86,52 @@ public class Mymaps extends AppCompatActivity implements OnMapReadyCallback, Goo
 
             @Override
             public View getInfoContents(Marker marker) {
-                // Personaliza el contenido del InfoWindow
+                // Infla el diseño personalizado
                 View infoWindow = getLayoutInflater().inflate(R.layout.custom_info_window, null);
+
+                // Obtén las vistas del diseño
+                ImageView infoImage = infoWindow.findViewById(R.id.infoImage);
+                TextView infoTextView = infoWindow.findViewById(R.id.infoTextView);
 
                 // Obtén la información almacenada en setTag
                 Object tag = marker.getTag();
 
                 // Muestra la información en el InfoWindow personalizado
-                if (tag != null) {
-                    TextView infoTextView = infoWindow.findViewById(R.id.infoTextView);
-                    infoTextView.setText(tag.toString());
+                if (tag != null && tag instanceof CustomInfo) {
+                    CustomInfo customInfo = (CustomInfo) tag;
+
+                    // Actualiza las vistas con la información personalizada
+                    infoImage.setImageResource(customInfo.getImageResId());
+                    infoTextView.setText(customInfo.getInfoText());
                 }
 
                 return infoWindow;
             }
         });
+
+        // Aquí puedes agregar marcadores al mapa
+
+        // Marcador para la tienda
+        LatLng tienda = new LatLng(-36.5900806, -72.0821342);
+        Marker tiendaMarker = mMap.addMarker(new MarkerOptions().position(tienda).title("Tienda"));
+        tiendaMarker.setTag(new CustomInfo(R.drawable.pngegg, "Información de la tienda"));
+
+        // Otros marcadores
+        LatLng marker1 = new LatLng(-36.6064595, -72.1054738);
+        Marker marker1Marker = mMap.addMarker(new MarkerOptions().position(marker1).title("broderjud").snippet("BARBERIA ASDFJKMASFMSAKFMSKAMFKDSM"));
+        marker1Marker.setTag(new CustomInfo(R.drawable.a9409281fa230ecd40b7f6e5f0594159, "Información de broderjud"));
+
+        LatLng marker2 = new LatLng(-36.6057102, -72.0944875);
+        Marker marker2Marker = mMap.addMarker(new MarkerOptions().position(marker2).title("barber desenden").snippet("CORTES DEGRADESSSSSSS"));
+        marker2Marker.setTag(new CustomInfo(R.drawable.sensor, "Información de barber desenden"));
+
+        // Agrega los marcadores a la lista si es necesario (si necesitas llevar un registro)
+        // marcadores.add(tiendaMarker);
+        // marcadores.add(marker1Marker);
+        // marcadores.add(marker2Marker);
+
+        // Mueve la cámara al primer marcador
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(tienda));
     }
 
     @Override

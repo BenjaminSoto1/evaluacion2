@@ -1,14 +1,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="8dp">
+    android:orientation="vertical">
+
+    <!-- Puedes agregar cualquier vista que desees aquí, como imágenes, texto, etc. -->
+
+    <ImageView
+        android:id="@+id/infoImage"
+        android:layout_width="151dp"
+        android:layout_height="103dp"
+        android:scaleType="centerCrop"
+
+        app:srcCompat="@drawable/a9409281fa230ecd40b7f6e5f0594159" />
 
     <TextView
         android:id="@+id/infoTextView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Información adicional"
-        android:textSize="14sp"
-        android:textColor="@android:color/black" />
+        android:layout_height="31dp"
+        android:text="Barberia Brotherhood" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="140dp"
+        android:layout_height="119dp"
+        android:contentDescription="Horario:  domingo	Cerrado lunes	10 a. m.–7 p. m. martes	10 a. m.–7 p. m. miércoles	10 a. m.–7 p. m. jueves	10 a. m.–7 p. m. viernes	10 a. m.–7 p. m. sábado	10 a. m.–5 p. m"
+        android:text="Horario:  domingo Cerrado                                           lunes	10 a. m.–7 p. m.                martes	10 a. m.–7 p. m. miércoles	10 a. m.–7 p.m. jueves	10 a. m.–7 p. m. viernes	10 a. m.–7 p. m. sábado	10 a. m.–5 p. m" />
+
+    <!-- Agrega más vistas según sea necesario -->
+
 </LinearLayout>
