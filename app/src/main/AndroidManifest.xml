@@ -15,7 +15,7 @@
 
         <!-- Actividad Registro como principal -->
         <activity
-            android:name=".Registro"
+            android:name=".login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,7 @@
 
         <!-- Otras actividades -->
         <activity
-            android:name=".login"
+            android:name=".Registro"
             android:exported="false" />
         <activity
             android:name=".jjbarbers"
