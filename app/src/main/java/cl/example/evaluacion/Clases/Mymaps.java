@@ -62,7 +62,7 @@ public class Mymaps extends AppCompatActivity implements OnMapReadyCallback, Goo
         txtLongitud = findViewById(R.id.txtLongitud);
         Intent intent = new Intent(this, Inicio.class);
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapa);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapa1);
         mapFragment.getMapAsync(this);
 
         btMenu.setOnClickListener(new View.OnClickListener() {

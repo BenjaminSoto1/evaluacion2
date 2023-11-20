@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtLatitud" />
 
     <fragment
-        android:id="@+id/mapa"
+        android:id="@+id/mapa1"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="300dp"

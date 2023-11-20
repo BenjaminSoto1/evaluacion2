@@ -13,33 +13,34 @@ import cl.example.evaluacion.Clases.brotherhood;
 
 public class Inicio extends AppCompatActivity {
 
-    Button idinventario, idmapa, idsensores;
+    Button btBrother, btJJbarber, btArauco,btLantañoo;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
-        idinventario=findViewById(R.id.idInventario);
-        idmapa=findViewById(R.id.idMapa);
-        idsensores=findViewById(R.id.idSensores);
+        btLantañoo=findViewById(R.id.BtLantaño);
+        btArauco=findViewById(R.id.BtArauco);
+        btBrother=findViewById(R.id.BtBrother);
+        btJJbarber=findViewById(R.id.BtJJBarbers);
         Intent intent = new Intent(this,MainActivity.class);
         Intent intent2 = new Intent(this, Mymaps.class);
         Intent intent3 = new Intent(this, brotherhood.class);
 
-        idinventario.setOnClickListener(new View.OnClickListener() {
+        btLantañoo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(intent);
             }
         });
-        idmapa.setOnClickListener(new View.OnClickListener() {
+        btJJbarber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(intent2);
             }
         });
-        idsensores.setOnClickListener(new View.OnClickListener() {
+        btBrother.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(intent3);
