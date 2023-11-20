@@ -7,10 +7,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.app.Activity;
+
 
 import cl.example.evaluacion.Clases.brotherhood;
 
 public class Inicio extends AppCompatActivity {
+
 
     Button btBrother, btJJbarber, btArauco,btLantañoo;
 
@@ -19,6 +22,17 @@ public class Inicio extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+        Button btSalir = findViewById(R.id.btSalir);
+
+        btSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Cierra la actividad actual y, opcionalmente, la aplicación
+                finish();
+                System.exit(0); // Cierra la aplicación por completo (opcional)
+            }
+        });
+
         btLantañoo=findViewById(R.id.BtLantaño);
         btArauco=findViewById(R.id.BtArauco);
         btBrother=findViewById(R.id.BtBrother);
