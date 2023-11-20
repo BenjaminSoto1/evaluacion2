@@ -106,7 +106,7 @@ public class araucobarber extends AppCompatActivity implements OnMapReadyCallbac
         // Otros marcadores
         LatLng marker1 = new LatLng(-36.61248,-72.10462);
         Marker marker1Marker = mMap.addMarker(new MarkerOptions().position(marker1).title("AraucoBarber").snippet("BARBERIA "));
-        marker1Marker.setTag(new araucobarber.CustomInfo(R.drawable.arauco_barbershop_modified, "Información de AraucoBarber"));
+
 
 
         // Mueve la cámara al primer marcador

@@ -105,7 +105,6 @@ public class barberhouse extends AppCompatActivity implements OnMapReadyCallback
         // Otros marcadores
         LatLng marker1 = new LatLng(-36.59186,-72.12136);
         Marker marker1Marker = mMap.addMarker(new MarkerOptions().position(marker1).title("BarberHouse").snippet("BARBERIA "));
-        marker1Marker.setTag(new brotherhood.CustomInfo(R.drawable.barber_house_modified, "Información de BarberHouse"));
 
 
         // Mueve la cámara al primer marcador

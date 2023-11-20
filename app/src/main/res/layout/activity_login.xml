@@ -73,6 +73,7 @@
         android:text="¿Aún no te haz registrado?"
         app:layout_constraintBottom_toTopOf="@+id/btRegistro"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
