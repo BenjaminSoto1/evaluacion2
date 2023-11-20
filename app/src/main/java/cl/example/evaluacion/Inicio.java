@@ -15,24 +15,15 @@ import cl.example.evaluacion.Clases.brotherhood;
 public class Inicio extends AppCompatActivity {
 
 
-    Button btBrother, btJJbarber, btArauco,btLantañoo;
+    Button btBrother, btJJbarber, btArauco,btLantañoo, btSalir;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
-        Button btSalir = findViewById(R.id.btSalir);
 
-        btSalir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Cierra la actividad actual y, opcionalmente, la aplicación
-
-                System.exit(0); // Cierra la aplicación por completo (opcional)
-            }
-        });
-
+        btSalir=findViewById(R.id.btSalir);
         btLantañoo=findViewById(R.id.BtLantaño);
         btArauco=findViewById(R.id.BtArauco);
         btBrother=findViewById(R.id.BtBrother);
@@ -43,6 +34,7 @@ public class Inicio extends AppCompatActivity {
         Intent intent3 = new Intent(this, brotherhood.class);
         Intent intent4 = new Intent(this, araucobarber.class);
         Intent intent5 = new Intent(this, jjbarbers.class);
+        Intent intent6 = new Intent(this, login.class);
 
         btLantañoo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +64,12 @@ public class Inicio extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(intent5);
+            }
+        });
+        btSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent6);
             }
         });
 

@@ -30,6 +30,8 @@ public class Registro extends AppCompatActivity {
     private EditText editTextPassword;
     private Button btnRegister;
 
+    Button btVolver;
+
 
 
     @Override
@@ -37,33 +39,54 @@ public class Registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
+        btVolver=findViewById(R.id.btVolver);
+        // Inicializar FirebaseAuth
         mAuth = FirebaseAuth.getInstance();
+
 
         editTextEmail = findViewById(R.id.editTextTextEmailAddress2);
         editTextPassword = findViewById(R.id.editTextTextPassword2);
         btnRegister = findViewById(R.id.btLogin2);
 
+        Intent intent = new Intent(this, login.class);
+
+
+        btVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
+
+        // Agregar un Listener al botón de registro
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Aquí se inicia el proceso de reCAPTCHA antes de registrar al usuario
+
                 Firestore = FirebaseFirestore.getInstance();
                 String email = editTextEmail.getText().toString();
                 String password = editTextPassword.getText().toString();
 
                 if (email.isEmpty() || password.isEmpty()) {
+                    // Verificar si el email o la contraseña están vacíos
                     Toast.makeText(Registro.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                 } else {
+                    // Registro del usuario
                     mAuth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener(Registro.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+                                        // El registro fue exitoso
                                         registrouser(email, password);
                                         Toast.makeText(Registro.this, "Registro de usuario exitoso", Toast.LENGTH_SHORT).show();
+
                                         Intent intent = new Intent(Registro.this, Inicio.class);
                                         startActivity(intent);
+                                        // Puedes redirigir al usuario a la pantalla principal u otra actividad aquí
                                     } else {
-                                        //si falla el registro
+                                        // El registro falló
                                         Toast.makeText(Registro.this, "Error al registrar el usuario", Toast.LENGTH_SHORT).show();
                                     }
                                 }
