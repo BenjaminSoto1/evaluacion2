@@ -51,30 +51,22 @@ public class login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-                String email = editTextEmail.getText().toString().trim(); // Obtén el correo y quita espacios en blanco
-                String password = editTextPassword.getText().toString().trim(); // Obtén la contraseña y quita espacios en blanco
-
+                String email = editTextEmail.getText().toString().trim();
+                String password = editTextPassword.getText().toString().trim();
                 if (!email.isEmpty() && !password.isEmpty()) {
                     mAuth.signInWithEmailAndPassword(email, password)
                             .addOnCompleteListener(login.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        // Inicio de sesión exitoso
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         Toast.makeText(login.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
-
-                                        // Redirigir al usuario a la actividad MainActivity
                                         Intent intent = new Intent(login.this, Inicio.class);
                                         startActivity(intent);
                                     } else {
-                                        // El inicio de sesión falló
                                         Toast.makeText(login.this, "Inicio de sesión fallido", Toast.LENGTH_SHORT).show();
                                     }
                                 }
