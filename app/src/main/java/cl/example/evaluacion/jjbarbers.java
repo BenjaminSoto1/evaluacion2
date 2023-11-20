@@ -57,7 +57,13 @@ public class jjbarbers extends AppCompatActivity implements OnMapReadyCallback, 
         Intent intent = new Intent(this, Inicio.class);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapa4);
         mapFragment.getMapAsync(this);
-
+        Intent intent5 = new Intent(this, Inicio.class);
+        btvolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent5);
+            }
+        });
     }
 
     @Override

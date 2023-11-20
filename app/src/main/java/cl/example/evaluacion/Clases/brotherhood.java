@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +22,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
+import cl.example.evaluacion.Inicio;
 import cl.example.evaluacion.R;
+import cl.example.evaluacion.jjbarbers;
 
 public class brotherhood extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
@@ -55,6 +58,13 @@ public class brotherhood extends AppCompatActivity implements OnMapReadyCallback
         btvolver = findViewById(R.id.button2);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapa1);
         mapFragment.getMapAsync(this);
+        Intent intent5 = new Intent(this, Inicio.class);
+        btvolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent5);
+            }
+        });
 
     }
 
