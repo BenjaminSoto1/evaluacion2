@@ -28,7 +28,7 @@ public class Inicio extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Cierra la actividad actual y, opcionalmente, la aplicación
-                finish();
+
                 System.exit(0); // Cierra la aplicación por completo (opcional)
             }
         });
