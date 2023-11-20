@@ -1,4 +1,4 @@
-package cl.example.evaluacion.Clases;
+package cl.example.evaluacion;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,9 +20,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
-import cl.example.evaluacion.R;
+import cl.example.evaluacion.Clases.brotherhood;
 
-public class brotherhood extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+public class barberhouse extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     public static class CustomInfo {
         private int imageResId;
@@ -49,9 +49,9 @@ public class brotherhood extends AppCompatActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_brotherhood);
+        setContentView(R.layout.activity_barberhouse);
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapa1);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapa2);
         mapFragment.getMapAsync(this);
 
     }
@@ -80,8 +80,8 @@ public class brotherhood extends AppCompatActivity implements OnMapReadyCallback
                 Object tag = marker.getTag();
 
                 // Muestra la información en el InfoWindow personalizado
-                if (tag != null && tag instanceof CustomInfo) {
-                    CustomInfo customInfo = (CustomInfo) tag;
+                if (tag != null && tag instanceof barberhouse.CustomInfo) {
+                    barberhouse.CustomInfo customInfo = (barberhouse.CustomInfo) tag;
 
                     // Actualiza las vistas con la información personalizada
                     infoImage.setImageResource(customInfo.getImageResId());
@@ -93,9 +93,9 @@ public class brotherhood extends AppCompatActivity implements OnMapReadyCallback
         });
         // Aquí puedes agregar marcadores al mapa
         // Otros marcadores
-        LatLng marker1 = new LatLng(-36.60671,-72.09969);
-        Marker marker1Marker = mMap.addMarker(new MarkerOptions().position(marker1).title("Brotherhood").snippet("BARBERIA ASDFJKMASFMSAKFMSKAMFKDSM"));
-        marker1Marker.setTag(new CustomInfo(R.drawable.a9409281fa230ecd40b7f6e5f0594159, "Información de broderjud"));
+        LatLng marker1 = new LatLng(-36.59186,-72.12136);
+        Marker marker1Marker = mMap.addMarker(new MarkerOptions().position(marker1).title("BarberHouse").snippet("BARBERIA "));
+        marker1Marker.setTag(new brotherhood.CustomInfo(R.drawable.barber_house_modified, "Información de BarberHouse"));
 
 
         // Mueve la cámara al primer marcador

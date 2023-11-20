@@ -84,9 +84,9 @@
         android:id="@+id/imageView4"
         android:layout_width="31dp"
         android:layout_height="41dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pngwing_com__1_" />
@@ -114,4 +114,12 @@
         map:cameraZoom="10"
         map:uiRotateGestures="true"
         map:uiZoomControls="true" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="591dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
