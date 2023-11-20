@@ -75,7 +75,7 @@ public class Registro extends AppCompatActivity {
                                         startActivity(intent);
                                         // Puedes redirigir al usuario a la pantalla principal u otra actividad aquí
                                     } else {
-                                        // El registro falló
+                                        //si falla el registro
                                         Toast.makeText(Registro.this, "Error al registrar el usuario", Toast.LENGTH_SHORT).show();
                                     }
                                 }

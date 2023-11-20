@@ -13,7 +13,7 @@
         <ImageView
             android:id="@+id/infoImage"
             android:layout_width="match_parent"
-            android:layout_height="169dp"
+            android:layout_height="122dp"
             android:scaleType="centerCrop"
 
             app:srcCompat="@drawable/jj_barbers__black" />
@@ -62,8 +62,8 @@
 
         <TextView
             android:id="@+id/infoTextView8"
-            android:layout_width="176dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
             android:text="Sabado 10 am - 9 pm" />
 
 
