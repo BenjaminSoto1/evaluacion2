@@ -107,6 +107,10 @@ public class jjbarbers extends AppCompatActivity implements OnMapReadyCallback, 
         Marker marker1Marker = mMap.addMarker(new MarkerOptions().position(marker1).title("JJ Barbers").snippet("BARBERIA "));
         marker1Marker.setTag(new jjbarbers.CustomInfo(R.drawable.jj_barbers__black, "Información de JJ Barbers"));
 
+        LatLng marker2 = new LatLng(-36.60736,-72.09945);
+        Marker marker2Marker = mMap.addMarker(new MarkerOptions().position(marker2).title("JJ Barbers 2").snippet("BARBERIA "));
+        marker2Marker.setTag(new jjbarbers.CustomInfo(R.drawable.jj_barbers__black, "Información de JJ Barbers"));
+
 
         // Mueve la cámara al primer marcador
         mMap.moveCamera(CameraUpdateFactory.newLatLng(marker1));

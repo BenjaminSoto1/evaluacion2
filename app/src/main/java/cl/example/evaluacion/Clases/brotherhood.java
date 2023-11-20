@@ -108,7 +108,11 @@ public class brotherhood extends AppCompatActivity implements OnMapReadyCallback
         // Otros marcadores
         LatLng marker1 = new LatLng(-36.60671,-72.09969);
         Marker marker1Marker = mMap.addMarker(new MarkerOptions().position(marker1).title("Brotherhood").snippet("BARBERIA ASDFJKMASFMSAKFMSKAMFKDSM"));
-        marker1Marker.setTag(new CustomInfo(R.drawable.a9409281fa230ecd40b7f6e5f0594159, "Información de broderjud"));
+        marker1Marker.setTag(new CustomInfo(R.drawable.barber_house_modified, "Información de broderjud"));
+
+        LatLng marker2 = new LatLng(-36.59805,-72.09861);
+        Marker marker2Marker = mMap.addMarker(new MarkerOptions().position(marker2).title("Brotherhood 2").snippet("BARBERIA ASDFJKMASFMSAKFMSKAMFKDSM"));
+        marker2Marker.setTag(new CustomInfo(R.drawable.barber_house_modified, "Información de broderjud"));
 
 
         // Mueve la cámara al primer marcador

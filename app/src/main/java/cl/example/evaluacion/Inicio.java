@@ -23,11 +23,13 @@ public class Inicio extends AppCompatActivity {
         btArauco=findViewById(R.id.BtArauco);
         btBrother=findViewById(R.id.BtBrother);
         btJJbarber=findViewById(R.id.BtJJBarbers);
+
         Intent intent = new Intent(this, barberhouse.class);
         Intent intent2 = new Intent(this, jjbarbers.class);
         Intent intent3 = new Intent(this, brotherhood.class);
         Intent intent4 = new Intent(this, araucobarber.class);
         Intent intent5 = new Intent(this, jjbarbers.class);
+
         btLantañoo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,6 +60,7 @@ public class Inicio extends AppCompatActivity {
                 startActivity(intent5);
             }
         });
+
 
 
     }
