@@ -9,10 +9,10 @@
     <ImageView
         android:id="@+id/infoImage"
         android:layout_width="match_parent"
-        android:layout_height="134dp"
+        android:layout_height="162dp"
         android:scaleType="centerCrop"
 
-        app:srcCompat="@drawable/brotherhood" />
+        app:srcCompat="@drawable/brotherhood_modified" />
 
     <TextView
         android:id="@+id/infoTextView2"

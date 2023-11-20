@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,6 +43,7 @@ public class brotherhood extends AppCompatActivity implements OnMapReadyCallback
         }
     }
     GoogleMap mMap;
+    Button btvolver;
 
     // Lista para almacenar los marcadores
     List<Marker> marcadores = new ArrayList<>();
@@ -50,7 +52,7 @@ public class brotherhood extends AppCompatActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brotherhood);
-
+        btvolver = findViewById(R.id.button2);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapa1);
         mapFragment.getMapAsync(this);
 
@@ -59,6 +61,7 @@ public class brotherhood extends AppCompatActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
+
 
         // Configura el adaptador para el InfoWindow
         mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {

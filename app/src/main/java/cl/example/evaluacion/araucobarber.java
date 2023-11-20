@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,7 +45,7 @@ public class araucobarber extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
     GoogleMap mMap;
-
+    Button btvolver;
     // Lista para almacenar los marcadores
     List<Marker> marcadores = new ArrayList<>();
     @SuppressLint("MissingInflatedId")
@@ -52,7 +53,7 @@ public class araucobarber extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_araucobarber);
-
+        btvolver = findViewById(R.id.button3);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapa3);
         mapFragment.getMapAsync(this);
 
@@ -72,7 +73,7 @@ public class araucobarber extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public View getInfoContents(Marker marker) {
                 // Infla el diseño personalizado
-                View infoWindow = getLayoutInflater().inflate(R.layout.custom_info_window, null);
+                View infoWindow = getLayoutInflater().inflate(R.layout.custominfoarauco, null);
 
                 // Obtén las vistas del diseño
                 ImageView infoImage = infoWindow.findViewById(R.id.infoImage);

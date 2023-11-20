@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,6 +43,7 @@ public class barberhouse extends AppCompatActivity implements OnMapReadyCallback
         }
     }
     GoogleMap mMap;
+    Button btvolver;
 
     // Lista para almacenar los marcadores
     List<Marker> marcadores = new ArrayList<>();
@@ -50,7 +52,7 @@ public class barberhouse extends AppCompatActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barberhouse);
-
+        btvolver = findViewById(R.id.button4);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapa2);
         mapFragment.getMapAsync(this);
 
@@ -70,7 +72,7 @@ public class barberhouse extends AppCompatActivity implements OnMapReadyCallback
             @Override
             public View getInfoContents(Marker marker) {
                 // Infla el diseño personalizado
-                View infoWindow = getLayoutInflater().inflate(R.layout.custom_info_window, null);
+                View infoWindow = getLayoutInflater().inflate(R.layout.custominfobarrberhouse, null);
 
                 // Obtén las vistas del diseño
                 ImageView infoImage = infoWindow.findViewById(R.id.infoImage);
